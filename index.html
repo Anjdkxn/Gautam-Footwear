@@ -1,0 +1,1854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gautam Footwear</title>
+  <link rel="shorcut icon" type="text/css" href="logo.avif">
+  <style type="text/css">
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f6f6f6;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #ffffff;
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.logo span {
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+}
+
+/* Nav Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #ff4d4d;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.nav-links li a:hover {
+  color: #ff4d4d;
+}
+
+/* Hamburger */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 26px;
+  height: 3px;
+  background: #333;
+  margin: 4px 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .nav-links {
+    position: absolute;
+    top: 72px;
+    right: -100%;
+    width: 260px;
+    height: calc(100vh - 72px);
+    background: #fff;
+    flex-direction: column;
+    padding: 40px 25px;
+    gap: 22px;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.06);
+    transition: 0.4s ease;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+
+
+  :root {
+      --primary: #111;
+      --secondary: #555;
+      --accent: #000;
+      --bg: #ffffff;
+      --shadow: 0 15px 40px rgba(0,0,0,0.08);
+      --radius: 16px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--primary);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 60px 8%;
+      gap: 60px;
+    }
+
+    .hero-content {
+      flex: 1;
+      animation: fadeLeft 1s ease;
+    }
+
+    .hero-content img {
+      width: 90px;
+      margin-bottom: 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero-content h1 span {
+      color: var(--accent);
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      color: var(--secondary);
+      max-width: 500px;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .hero-buttons a {
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: 0.3s;
+      border: 2px solid var(--accent);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    .btn-outline:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* HERO IMAGE */
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      animation: fadeRight 1s ease;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-content p {
+        margin: 0 auto 30px;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+
+    :root{
+  --black:#000;
+  --gray:#666;
+  --white:#fff;
+  --shadow:0 16px 40px rgba(0,0,0,0.08);
+  --radius:18px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins", sans-serif;
+}
+
+body{
+  background:var(--white);
+}
+
+/* SECTION */
+.men-section{
+  padding:90px 8%;
+}
+
+/* HEADER */
+.section-title{
+  text-align:center;
+  margin-bottom:70px;
+}
+
+.section-title h2{
+  font-size:3rem;
+  margin-bottom:10px;
+}
+
+.section-title p{
+  color:var(--gray);
+  font-size:1.05rem;
+}
+
+/* GRID */
+.men-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:35px;
+}
+
+/* CARD */
+.men-card{
+  background:#fff;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  transition:0.4s ease;
+}
+
+.men-card:hover{
+  transform:translateY(-12px);
+}
+
+/* IMAGE */
+.men-card img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+  transition:0.4s;
+}
+
+.men-card:hover img{
+  transform:scale(1.05);
+}
+
+/* CONTENT */
+.card-body{
+  padding:22px;
+  text-align:center;
+}
+
+.card-body h3{
+  font-size:1.25rem;
+  margin-bottom:6px;
+}
+
+.card-body span{
+  color:var(--gray);
+  font-size:0.95rem;
+  display:block;
+  margin-bottom:8px;
+}
+
+.price{
+  font-size:1.2rem;
+  font-weight:600;
+  margin-bottom:18px;
+}
+
+/* BUTTON */
+.buy-btn{
+  display:inline-block;
+  padding:12px 32px;
+  border-radius:50px;
+  background:var(--black);
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.buy-btn:hover{
+  background:#333;
+}
+
+/* RESPONSIVE */
+@media(max-width:500px){
+  .section-title h2{
+    font-size:2.3rem;
+  }
+}
+
+:root{
+  --black:#000;
+  --gray:#666;
+  --white:#fff;
+  --shadow:0 16px 40px rgba(0,0,0,0.08);
+  --radius:18px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins", sans-serif;
+}
+
+body{
+  background:var(--white);
+}
+
+/* SECTION */
+.women-section{
+  padding:90px 8%;
+}
+
+/* HEADER */
+.section-title{
+  text-align:center;
+  margin-bottom:70px;
+}
+
+.section-title h2{
+  font-size:3rem;
+  margin-bottom:10px;
+}
+
+.section-title p{
+  color:var(--gray);
+  font-size:1.05rem;
+}
+
+/* GRID */
+.women-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:35px;
+}
+
+/* CARD */
+.women-card{
+  background:#fff;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  transition:0.4s ease;
+}
+
+.women-card:hover{
+  transform:translateY(-12px);
+}
+
+/* IMAGE */
+.women-card img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+  transition:0.4s;
+}
+
+.women-card:hover img{
+  transform:scale(1.05);
+}
+
+/* CONTENT */
+.card-body{
+  padding:22px;
+  text-align:center;
+}
+
+.card-body h3{
+  font-size:1.25rem;
+  margin-bottom:6px;
+}
+
+.card-body span{
+  color:var(--gray);
+  font-size:0.95rem;
+  display:block;
+  margin-bottom:8px;
+}
+
+.price{
+  font-size:1.2rem;
+  font-weight:600;
+  margin-bottom:18px;
+}
+
+/* BUTTON */
+.buy-btn{
+  display:inline-block;
+  padding:12px 32px;
+  border-radius:50px;
+  background:var(--black);
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.buy-btn:hover{
+  background:#333;
+}
+
+/* RESPONSIVE */
+@media(max-width:500px){
+  .section-title h2{
+    font-size:2.3rem;
+  }
+}
+
+:root{
+  --black:#000;
+  --gray:#666;
+  --white:#fff;
+  --shadow:0 16px 40px rgba(0,0,0,0.08);
+  --radius:18px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins", sans-serif;
+}
+
+body{
+  background:var(--white);
+}
+
+/* SECTION */
+.kids-section{
+  padding:90px 8%;
+}
+
+/* HEADER */
+.section-title{
+  text-align:center;
+  margin-bottom:70px;
+}
+
+.section-title h2{
+  font-size:3rem;
+  margin-bottom:10px;
+}
+
+.section-title p{
+  color:var(--gray);
+  font-size:1.05rem;
+}
+
+/* GRID */
+.kids-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:35px;
+}
+
+/* CARD */
+.kids-card{
+  background:#fff;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  transition:0.4s ease;
+}
+
+.kids-card:hover{
+  transform:translateY(-12px);
+}
+
+/* IMAGE */
+.kids-card img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+  transition:0.4s;
+}
+
+.kids-card:hover img{
+  transform:scale(1.05);
+}
+
+/* CONTENT */
+.card-body{
+  padding:22px;
+  text-align:center;
+}
+
+.card-body h3{
+  font-size:1.25rem;
+  margin-bottom:6px;
+}
+
+.card-body span{
+  color:var(--gray);
+  font-size:0.95rem;
+  display:block;
+  margin-bottom:8px;
+}
+
+.price{
+  font-size:1.2rem;
+  font-weight:600;
+  margin-bottom:18px;
+}
+
+/* BUTTON */
+.buy-btn{
+  display:inline-block;
+  padding:12px 32px;
+  border-radius:50px;
+  background:var(--black);
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.buy-btn:hover{
+  background:#333;
+}
+
+/* RESPONSIVE */
+@media(max-width:500px){
+  .section-title h2{
+    font-size:2.3rem;
+  }
+}
+
+
+:root{
+  --black:#000;
+  --gray:#666;
+  --white:#fff;
+  --shadow:0 16px 40px rgba(0,0,0,0.08);
+  --radius:18px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins", sans-serif;
+}
+
+body{
+  background:var(--white);
+}
+
+/* SECTION */
+.new-section{
+  padding:90px 8%;
+}
+
+/* HEADER */
+.section-title{
+  text-align:center;
+  margin-bottom:70px;
+}
+
+.section-title h2{
+  font-size:3rem;
+  margin-bottom:10px;
+}
+
+.section-title p{
+  color:var(--gray);
+  font-size:1.05rem;
+}
+
+/* GRID */
+.new-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:35px;
+}
+
+/* CARD */
+.new-card{
+  background:#fff;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  transition:0.4s ease;
+}
+
+.new-card:hover{
+  transform:translateY(-12px);
+}
+
+/* IMAGE */
+.new-card img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+  transition:0.4s;
+}
+
+.new-card:hover img{
+  transform:scale(1.05);
+}
+
+/* CONTENT */
+.card-body{
+  padding:22px;
+  text-align:center;
+}
+
+.card-body h3{
+  font-size:1.25rem;
+  margin-bottom:6px;
+}
+
+.card-body span{
+  color:var(--gray);
+  font-size:0.95rem;
+  display:block;
+  margin-bottom:8px;
+}
+
+.price{
+  font-size:1.2rem;
+  font-weight:600;
+  margin-bottom:18px;
+}
+
+/* BUTTON */
+.buy-btn{
+  display:inline-block;
+  padding:12px 32px;
+  border-radius:50px;
+  background:var(--black);
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.buy-btn:hover{
+  background:#333;
+}
+
+/* RESPONSIVE */
+@media(max-width:500px){
+  .section-title h2{
+    font-size:2.3rem;
+  }
+}
+
+
+:root{
+  --black:#000;
+  --gray:#666;
+  --white:#fff;
+  --shadow:0 16px 40px rgba(0,0,0,0.08);
+  --radius:18px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins", sans-serif;
+}
+
+body{
+  background:var(--white);
+}
+
+/* OFFERS SECTION */
+.offers-section{
+  padding:90px 8%;
+}
+
+/* SECTION TITLE */
+.section-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.section-title h2{
+  font-size:3rem;
+  margin-bottom:10px;
+}
+
+.section-title p{
+  color:var(--gray);
+  font-size:1.05rem;
+}
+
+/* OFFERS GRID */
+.offers-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:30px;
+}
+
+/* OFFER CARD */
+.offer-card{
+  background:#fff;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  transition:0.4s ease;
+  text-align:center;
+  padding:25px 15px;
+}
+
+.offer-card:hover{
+  transform:translateY(-10px);
+}
+
+.offer-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:12px;
+  margin-bottom:15px;
+  transition:0.3s;
+}
+
+.offer-card:hover img{
+  transform:scale(1.05);
+}
+
+.offer-card h3{
+  font-size:1.3rem;
+  margin-bottom:8px;
+}
+
+.offer-card p{
+  color:var(--gray);
+  font-size:0.95rem;
+  margin-bottom:12px;
+}
+
+.offer-card .offer-price{
+  font-size:1.1rem;
+  font-weight:600;
+  margin-bottom:15px;
+}
+
+.offer-card .buy-btn{
+  display:inline-block;
+  padding:10px 28px;
+  border-radius:50px;
+  background:var(--black);
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.offer-card .buy-btn:hover{
+  background:#333;
+}
+
+/* RESPONSIVE */
+@media(max-width:500px){
+  .section-title h2{
+    font-size:2.3rem;
+  }
+}
+
+
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins", sans-serif;
+}
+
+body{
+  background:var(--white);
+}
+
+/* FOOTER */
+.footer{
+  background:var(--white);
+  color:var(--black);
+  padding:60px 8%;
+  box-shadow:var(--shadow);
+}
+
+.footer-container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:30px;
+}
+
+/* FOOTER BOX */
+.footer-box{
+  flex:1 1 220px;
+}
+
+.footer-box h3{
+  font-size:1.5rem;
+  margin-bottom:20px;
+}
+
+.footer-box p{
+  color:var(--gray);
+  font-size:0.95rem;
+  line-height:1.6;
+}
+
+.footer-box a{
+  display:block;
+  color:var(--gray);
+  text-decoration:none;
+  margin-bottom:10px;
+  transition:0.3s;
+}
+
+.footer-box a:hover{
+  color:var(--accent);
+}
+
+.social-icons{
+  display:flex;
+  gap:15px;
+  margin-top:10px;
+}
+
+.social-icons a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  background:var(--accent);
+  color:#fff;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.social-icons a:hover{
+  background:#333;
+}
+
+/* NEWSLETTER */
+.newsletter-form{
+  display:flex;
+  margin-top:15px;
+}
+
+.newsletter-form input[type="email"]{
+  flex:1;
+  padding:10px 15px;
+  border-radius:50px 0 0 50px;
+  border:none;
+  outline:none;
+  font-size:1rem;
+}
+
+.newsletter-form button{
+  padding:10px 20px;
+  border:none;
+  border-radius:0 50px 50px 0;
+  background:var(--accent);
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.newsletter-form button:hover{
+  background:#333;
+}
+
+/* COPYRIGHT */
+.footer-bottom{
+  text-align:center;
+  margin-top:40px;
+  color:var(--gray);
+  font-size:0.9rem;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .footer-container{
+    flex-direction:column;
+    align-items:center;
+  }
+  .footer-box{
+    flex:1 1 100%;
+    text-align:center;
+  }
+  .newsletter-form{
+    flex-direction:column;
+  }
+  .newsletter-form input[type="email"]{
+    border-radius:50px;
+    margin-bottom:10px;
+  }
+  .newsletter-form button{
+    border-radius:50px;
+  }
+}
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <!-- Logo -->
+  <div class="logo">
+    <img src="logo.avif" alt="Gautam Footwear Logo">
+    <span>Gautam Footwear</span>
+  </div>
+
+  <!-- Menu -->
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="men.html">Men</a></li>
+    <li><a href="women.html">Women</a></li>
+    <li><a href="kids.html">Kids</a></li>
+    <li><a href="offer.html">Offers</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+
+  <!-- Hamburger -->
+  <div class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+
+ <!-- HERO SECTION -->
+  <section class="hero">
+    
+    <!-- LEFT CONTENT -->
+    <div class="hero-content">
+      <!-- LOGO -->
+      <img src="logo.avif" alt="Gautam Footwear Logo">
+
+      <h1>
+        Step Into <span>Style & Comfort</span><br>
+        With Gautam Footwear
+      </h1>
+
+      <p>
+        Discover premium quality footwear designed for comfort,
+        durability, and everyday fashion. Walk confident, walk stylish.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="men.html" class="btn-primary">Shop Now</a>
+        <a href="new.html" class="btn-outline">View Collection</a>
+      </div>
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="hero-image">
+      <img src="canva.webp" alt="Gautam Footwear Shoes">
+    </div>
+
+  </section>
+
+
+  <!-- MEN FOOTWEAR SECTION -->
+<section class="men-section" id="men-footwear">
+
+  <div class="section-title">
+    <h2>Men Footwear Collection</h2>
+    <p>Comfort, durability & style crafted for modern men</p>
+  </div>
+
+  <div class="men-grid">
+
+    <!-- CARD 1 -->
+    <div class="men-card">
+      <img src="lea.avif">
+      <div class="card-body">
+        <h3>Leather Formal Shoes</h3>
+        <span>Office Wear</span>
+        <div class="price">₹2,099</div>
+        <a href="pay1.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="men-card">
+      <img src="cas.jpg">
+      <div class="card-body">
+        <h3>Casual Sneakers</h3>
+        <span>Daily Comfort</span>
+        <div class="price">₹1,499</div>
+        <a href="pay2.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="men-card">
+      <img src="run.webp">
+      <div class="card-body">
+        <h3>Running Shoes</h3>
+        <span>Sports Wear</span>
+        <div class="price">₹2,399</div>
+        <a href="pay3.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="men-card">
+      <img src="loa.webp">
+      <div class="card-body">
+        <h3>Stylish Loafers</h3>
+        <span>Smart Casual</span>
+        <div class="price">₹1,799</div>
+        <a href="pay4.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="men-card">
+      <img src="walk.webp">
+      <div class="card-body">
+        <h3>Walking Shoes</h3>
+        <span>Everyday Comfort</span>
+        <div class="price">₹1,299</div>
+        <a href="pay5.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="men-card">
+      <img src="high.webp">
+      <div class="card-body">
+        <h3>High Ankle Shoes</h3>
+        <span>Trendy Style</span>
+        <div class="price">₹2,699</div>
+        <a href="pay6.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="men-card">
+      <img src="canva.webp">
+      <div class="card-body">
+        <h3>Canvas Shoes</h3>
+        <span>Lightweight</span>
+        <div class="price">₹1,199</div>
+        <a href="pay7.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="men-card">
+      <img src="slip.jpg">
+      <div class="card-body">
+        <h3>Slip On Shoes</h3>
+        <span>Easy Wear</span>
+        <div class="price">₹1,399</div>
+        <a href="pay8.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 9 -->
+    <div class="men-card">
+      <img src="party.jpeg">
+      <div class="card-body">
+        <h3>Party Wear Shoes</h3>
+        <span>Premium Finish</span>
+        <div class="price">₹2,899</div>
+        <a href="pay9.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 10 -->
+    <div class="men-card">
+      <img src="out.jpg">
+      <div class="card-body">
+        <h3>Outdoor Sports Shoes</h3>
+        <span>Strong Grip</span>
+        <div class="price">₹2,499</div>
+        <a href="pay10.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 11 -->
+    <div class="men-card">
+      <img src="office.webp">
+      <div class="card-body">
+        <h3>Office Comfort Shoes</h3>
+        <span>Long Wear</span>
+        <div class="price">₹1,899</div>
+        <a href="pay11.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 12 -->
+    <div class="men-card">
+      <img src="prem.webp">
+      <div class="card-body">
+        <h3>Premium Sneakers</h3>
+        <span>Modern Look</span>
+        <div class="price">₹2,199</div>
+        <a href="pay12.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WOMEN FOOTWEAR SECTION -->
+<section class="women-section" id="women-footwear">
+
+  <div class="section-title">
+    <h2>Women Footwear Collection</h2>
+    <p>Elegance, comfort & style designed for modern women</p>
+  </div>
+
+  <div class="women-grid">
+
+    <!-- CARD 1 -->
+    <div class="women-card">
+      <img src="heel.jpg">
+      <div class="card-body">
+        <h3>Stylish Heels</h3>
+        <span>Party Wear</span>
+        <div class="price">₹1,899</div>
+        <a href="pro1.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="women-card">
+      <img src="flat.webp">
+      <div class="card-body">
+        <h3>Casual Flats</h3>
+        <span>Daily Comfort</span>
+        <div class="price">₹999</div>
+        <a href="pro2.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="women-card">
+      <img src="sand.jpg">
+      <div class="card-body">
+        <h3>Fashion Sandals</h3>
+        <span>Trendy Look</span>
+        <div class="price">₹1,299</div>
+        <a href="pro3.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="women-card">
+      <img src="wed.webp">
+      <div class="card-body">
+        <h3>Designer Wedges</h3>
+        <span>Elegant Style</span>
+        <div class="price">₹1,699</div>
+        <a href="pro4.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="women-card">
+      <img src="walk2.webp">
+      <div class="card-body">
+        <h3>Walking Shoes</h3>
+        <span>Everyday Wear</span>
+        <div class="price">₹1,499</div>
+        <a href="pro5.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="women-card">
+      <img src="slip2.webp">
+      <div class="card-body">
+        <h3>Slip On Sandals</h3>
+        <span>Easy Comfort</span>
+        <div class="price">₹1,099</div>
+        <a href="pro6.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="women-card">
+      <img src="cas2.webp">
+      <div class="card-body">
+        <h3>Casual Sneakers</h3>
+        <span>Modern Style</span>
+        <div class="price">₹1,799</div>
+        <a href="pro7.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="women-card">
+      <img src="kolha.jpg">
+      <div class="card-body">
+        <h3>Ethnic Kolhapuri</h3>
+        <span>Traditional Wear</span>
+        <div class="price">₹1,199</div>
+        <a href="pro8.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 9 -->
+    <div class="women-card">
+      <img src="sand2.jpg">
+      <div class="card-body">
+        <h3>Party Sandals</h3>
+        <span>Premium Finish</span>
+        <div class="price">₹2,099</div>
+        <a href="pro9.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 10 -->
+    <div class="women-card">
+      <img src="office2.jpg">
+      <div class="card-body">
+        <h3>Office Flats</h3>
+        <span>Formal Comfort</span>
+        <div class="price">₹1,299</div>
+        <a href="pro10.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 11 -->
+    <div class="women-card">
+      <img src="pre2.webp">
+      <div class="card-body">
+        <h3>Premium Heels</h3>
+        <span>Luxury Style</span>
+        <div class="price">₹2,499</div>
+        <a href="pro11.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 12 -->
+    <div class="women-card">
+      <img src="slip2.avif">
+      <div class="card-body">
+        <h3>Comfort Slippers</h3>
+        <span>Home & Casual</span>
+        <div class="price">₹899</div>
+        <a href="pro12.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- KIDS FOOTWEAR SECTION -->
+<section class="kids-section" id="kids-footwear">
+
+  <div class="section-title">
+    <h2>Kids Footwear Collection</h2>
+    <p>Fun, comfortable & stylish shoes for kids</p>
+  </div>
+
+  <div class="kids-grid">
+
+    <!-- CARD 1 -->
+    <div class="kids-card">
+      <img src="cart.webp">
+      <div class="card-body">
+        <h3>Cartoon Sneakers</h3>
+        <span>Fun Design</span>
+        <div class="price">₹799</div>
+        <a href="card1.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="kids-card">
+      <img src="sport.webp">
+      <div class="card-body">
+        <h3>Sports Shoes</h3>
+        <span>Active Wear</span>
+        <div class="price">₹899</div>
+        <a href="card2.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="kids-card">
+      <img src="sch.webp">
+      <div class="card-body">
+        <h3>School Shoes</h3>
+        <span>Durable & Comfy</span>
+        <div class="price">₹749</div>
+        <a href="card3.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="kids-card">
+      <img src="light.jpg">
+      <div class="card-body">
+        <h3>Lightweight Sneakers</h3>
+        <span>Everyday Use</span>
+        <div class="price">₹849</div>
+        <a href="card4.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="kids-card">
+      <img src="slip3.webp">
+      <div class="card-body">
+        <h3>Slip-on Shoes</h3>
+        <span>Easy to Wear</span>
+        <div class="price">₹699</div>
+        <a href="card5.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="kids-card">
+      <img src="party3.webp">
+      <div class="card-body">
+        <h3>Party Shoes</h3>
+        <span>Fancy Design</span>
+        <div class="price">₹899</div>
+        <a href="card6.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="kids-card">
+      <img src="run3.webp">
+      <div class="card-body">
+        <h3>Running Shoes</h3>
+        <span>Sports Fun</span>
+        <div class="price">₹799</div>
+        <a href="card7.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="kids-card">
+      <img src="color.jpg">
+      <div class="card-body">
+        <h3>Colorful Sandals</h3>
+        <span>Casual Wear</span>
+        <div class="price">₹649</div>
+        <a href="card8.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 9 -->
+    <div class="kids-card">
+      <img src="glow.webp">
+      <div class="card-body">
+        <h3>Glow Shoes</h3>
+        <span>Fun & Play</span>
+        <div class="price">₹899</div>
+        <a href="card9.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 10 -->
+    <div class="kids-card">
+      <img src="boot.jpg">
+      <div class="card-body">
+        <h3>Boots</h3>
+        <span>Winter Wear</span>
+        <div class="price">₹1,099</div>
+        <a href="card10.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 11 -->
+    <div class="kids-card">
+      <img src="com.webp">
+      <div class="card-body">
+        <h3>Comfort Sandals</h3>
+        <span>Everyday Use</span>
+        <div class="price">₹699</div>
+        <a href="card11.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 12 -->
+    <div class="kids-card">
+      <img src="fancy.webp">
+      <div class="card-body">
+        <h3>Fancy Sneakers</h3>
+        <span>Party & Casual</span>
+        <div class="price">₹949</div>
+        <a href="card12.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- NEW FOOTWEAR COLLECTION SECTION -->
+<section class="new-section" id="new-footwear">
+
+  <div class="section-title">
+    <h2>New Footwear Collection 2026</h2>
+    <p>Latest arrivals crafted for comfort, style, and durability</p>
+  </div>
+
+  <div class="new-grid">
+
+    <!-- CARD 1 -->
+    <div class="new-card">
+      <img src="lea.avif">
+      <div class="card-body">
+        <h3>Leather Sneakers</h3>
+        <span>Premium Casual</span>
+        <div class="price">₹2,099</div>
+        <a href="pay1.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="new-card">
+      <img src="canva.webp">
+      <div class="card-body">
+        <h3>Canvas Shoes</h3>
+        <span>Daily Wear</span>
+        <div class="price">₹1,199</div>
+        <a href="pay7.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="new-card">
+      <img src="running.avif">
+      <div class="card-body">
+        <h3>Running Shoes</h3>
+        <span>Sports & Training</span>
+        <div class="price">₹2,399</div>
+        <a href="new-product3.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="new-card">
+      <img src="loa2.webp">
+      <div class="card-body">
+        <h3>Stylish Loafers</h3>
+        <span>Smart Casual</span>
+        <div class="price">₹1,799</div>
+        <a href="pay4.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="new-card">
+      <img src="high2.jpg">
+      <div class="card-body">
+        <h3>High Ankle Shoes</h3>
+        <span>Trendy Style</span>
+        <div class="price">₹2,699</div>
+        <a href="new-product5.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="new-card">
+      <img src="slip4.webp">
+      <div class="card-body">
+        <h3>Slip On Sneakers</h3>
+        <span>Casual Comfort</span>
+        <div class="price">₹1,399</div>
+        <a href="new-product6.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="new-card">
+      <img src="heel.jpg">
+      <div class="card-body">
+        <h3>Stylish Heels</h3>
+        <span>Elegant Style</span>
+        <div class="price">₹1,899</div>
+        <a href="pro1.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="new-card">
+      <img src="flat4.webp">
+      <div class="card-body">
+        <h3>Flats Collection</h3>
+        <span>Comfortable Wear</span>
+        <div class="price">₹1,099</div>
+        <a href="new-product8.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 9 -->
+    <div class="new-card">
+      <img src="off.jpg">
+      <div class="card-body">
+        <h3>Office Shoes</h3>
+        <span>Formal Comfort</span>
+        <div class="price">₹1,899</div>
+        <a href="new-product9.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 10 -->
+    <div class="new-card">
+      <img src="com.webp">
+      <div class="card-body">
+        <h3>Comfort Sandals</h3>
+        <span>Elegant Casual</span>
+        <div class="price">₹699</div>
+        <a href="card11.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 11 -->
+    <div class="new-card">
+      <img src="par.webp">
+      <div class="card-body">
+        <h3>Party Wear Shoes</h3>
+        <span>Stylish & Fancy</span>
+        <div class="price">₹2,399</div>
+        <a href="new-product11.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- CARD 12 -->
+    <div class="new-card">
+      <img src="walk2.webp">
+      <div class="card-body">
+        <h3>Walking Shoes</h3>
+        <span>Daily Use</span>
+        <div class="price">₹1,499</div>
+        <a href="pro5.html" class="buy-btn">Buy Now</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- OFFERS SECTION -->
+<section class="offers-section" id="offers">
+
+  <div class="section-title">
+    <h2>Exciting Offers 2026</h2>
+    <p>Grab the latest deals and discounts on our footwear collection</p>
+  </div>
+
+  <div class="offers-grid">
+
+    <!-- OFFER 1 -->
+    <div class="offer-card">
+      <img src="comfor.jpg" alt="Offer 1">
+      <h3>Flat 20% Off Sneakers</h3>
+      <p>Comfortable and stylish sneakers for men and women</p>
+      <div class="offer-price">₹1,499 <span style="text-decoration:line-through;color:var(--gray);">₹1,999</span></div>
+      <a href="pro5.html" class="buy-btn">Buy Now</a>
+    </div>
+
+    <!-- OFFER 2 -->
+    <div class="offer-card">
+      <img src="sum.jpg" alt="Offer 2">
+      <h3>Buy 1 Get 1 Free Sandals</h3>
+      <p>Perfect for summer days and casual wear</p>
+      <div class="offer-price">₹1,099</div>
+      <a href="pro6.html" class="buy-btn">Buy Now</a>
+    </div>
+
+    <!-- OFFER 3 -->
+    <div class="offer-card">
+      <img src="color.jpg" alt="Offer 3">
+      <h3>15% Off Kids Collection</h3>
+      <p>Fun, comfy and colorful footwear for kids</p>
+      <div class="offer-price">₹649 <span style="text-decoration:line-through;color:var(--gray);">₹799</span></div>
+      <a href="card8.html" class="buy-btn">Buy Now</a>
+    </div>
+
+    <!-- OFFER 4 -->
+    <div class="offer-card">
+      <img src="heel.jpg" alt="Offer 4">
+      <h3>Summer Sale on Heels</h3>
+      <p>Elegant heels for women at discounted prices</p>
+      <div class="offer-price">₹1,899 <span style="text-decoration:line-through;color:var(--gray);">₹2,699</span></div>
+      <a href="pro1.html" class="buy-btn">Buy Now</a>
+    </div>
+
+    <!-- OFFER 5 -->
+    <div class="offer-card">
+      <img src="office.webp" alt="Offer 5">
+      <h3>Exclusive Formal Shoes Offer</h3>
+      <p>Get the latest office wear collection at 10% off</p>
+      <div class="offer-price">₹1,899 <span style="text-decoration:line-through;color:var(--gray);">₹2,099</span></div>
+      <a href="pay11.html" class="buy-btn">Buy Now</a>
+    </div>
+
+    <!-- OFFER 6 -->
+    <div class="offer-card">
+      <img src="run.webp" alt="Offer 6">
+      <h3>Running Shoes</h3>
+      <p>Grab your pair before stock runs out</p>
+      <div class="offer-price">₹2,399 <span style="text-decoration:line-through;color:var(--gray);">₹1,599</span></div>
+      <a href="pay3.html" class="buy-btn">Buy Now</a>
+    </div>
+
+    <!-- OFFER 7 -->
+    <div class="offer-card">
+      <img src="loa2.webp" alt="Offer 7">
+      <h3>Flat 25% Off Loafers</h3>
+      <p>Trendy loafers for office and casual wear</p>
+      <div class="offer-price">₹1,799 <span style="text-decoration:line-through;color:var(--gray);">₹1,999</span></div>
+      <a href="pay4.html" class="buy-btn">Buy Now</a>
+    </div>
+
+    <!-- OFFER 8 -->
+    <div class="offer-card">
+      <img src="sand.jpg" alt="Offer 8">
+      <h3>10% Off Sandals Collection</h3>
+      <p>Comfortable and stylish sandals for all</p>
+      <div class="offer-price">₹1,299 <span style="text-decoration:line-through;color:var(--gray);">₹999</span></div>
+      <a href="pro3.html" class="buy-btn">Buy Now</a>
+    </div>
+
+    <!-- OFFER 9 -->
+    <div class="offer-card">
+      <img src="cart.webp" alt="Offer 9">
+      <h3>Special Kids Shoes Discount</h3>
+      <p>Bright and fun footwear for kids</p>
+      <div class="offer-price">₹799 <span style="text-decoration:line-through;color:var(--gray);">₹999</span></div>
+      <a href="card1.html" class="buy-btn">Buy Now</a>
+    </div>
+
+    <!-- OFFER 10 -->
+    <div class="offer-card">
+      <img src="heel4.jpg" alt="Offer 10">
+      <h3>Festive Heels Offer</h3>
+      <p>Celebrate with stylish heels</p>
+      <div class="offer-price">₹1,399 <span style="text-decoration:line-through;color:var(--gray);">₹1,999</span></div>
+      <a href="" class="buy-btn">Buy Now</a>
+    </div>
+
+    <!-- OFFER 11 -->
+    <div class="offer-card">
+      <img src="slip4.webp" alt="Offer 11">
+      <h3>Exclusive Sneakers Discount</h3>
+      <p>Comfortable sneakers for daily wear</p>
+      <div class="offer-price">₹1,399 <span style="text-decoration:line-through;color:var(--gray);">₹1,599</span></div>
+      <a href="pay8.html" class="buy-btn">Buy Now</a>
+    </div>
+
+    <!-- OFFER 12 -->
+    <div class="offer-card">
+      <img src="off.jpg" alt="Offer 12">
+      <h3>Limited Edition Formal Shoes</h3>
+      <p>Stylish and elegant office shoes</p>
+      <div class="offer-price">₹1,999 <span style="text-decoration:line-through;color:var(--gray);">₹2,299</span></div>
+      <a href="offer-product12.html" class="buy-btn">Buy Now</a>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- FOOTER SECTION -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- ABOUT -->
+    <div class="footer-box">
+      <h3>Gautam Footwear</h3>
+      <p>Step into comfort and style. Explore our latest collection of men's, women's, and kids' footwear, designed to elevate your everyday look.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f">F</i></a>
+        <a href="#"><i class="fab fa-twitter">T</i></a>
+        <a href="#"><i class="fab fa-instagram">I</i></a>
+      </div>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="men.html">Men's Collection</a>
+      <a href="women.html">Women's Collection</a>
+      <a href="kids.html">Kids' Collection</a>
+      <a href="offer.html">Offers</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+
+    <!-- NEWSLETTER -->
+    <div class="footer-box">
+      <h3>Subscribe</h3>
+      <p>Get the latest updates, discounts, and offers directly in your inbox.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2025 Gautam Footwear. All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+
+
+ // Simple JS for future interactions
+    console.log("Gautam Footwear Hero Section Loaded");
+
+    console.log("Gautam Footwear Men Section Loaded");
+
+    console.log("Gautam Footwear Women Section Loaded");
+
+    console.log("Gautam Footwear Kids Section Loaded");
+
+    console.log("Gautam Footwear New Collection Loaded");
+
+    console.log("Gautam Footwear 12 Offers Section Loaded");
+
+    console.log("Gautam Footwear Footer Loaded");
+
+// Optional: handle newsletter submission
+document.querySelector(".newsletter-form").addEventListener("submit", function(e){
+  e.preventDefault();
+  alert("Thank you for subscribing!");
+});
+</script>
+</body>
+</html>

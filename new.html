@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gautam Footwear – New Collection</title>
+<link rel="shorcut icon" type="text/css" href="logo.avif">
+<style>
+       * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f6f6f6;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #ffffff;
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.logo span {
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+}
+
+/* Nav Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #ff4d4d;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.nav-links li a:hover {
+  color: #ff4d4d;
+}
+
+/* Hamburger */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 26px;
+  height: 3px;
+  background: #333;
+  margin: 4px 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .nav-links {
+    position: absolute;
+    top: 72px;
+    right: -100%;
+    width: 260px;
+    height: calc(100vh - 72px);
+    background: #fff;
+    flex-direction: column;
+    padding: 40px 25px;
+    gap: 22px;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.06);
+    transition: 0.4s ease;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+:root{
+  --black:#000;
+  --gray:#666;
+  --white:#fff;
+  --shadow:0 16px 40px rgba(0,0,0,0.08);
+  --radius:18px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins", sans-serif;
+}
+
+body{
+  background:var(--white);
+  padding:0;
+  margin:0;
+}
+
+/* HEADER */
+.page-header{
+  text-align:center;
+  padding:70px 20px 50px 20px;
+}
+
+.page-header h2{
+  font-size:3rem;
+  margin-bottom:10px;
+}
+
+.page-header p{
+  color:var(--gray);
+  font-size:1.05rem;
+}
+
+/* GRID */
+.new-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:30px;
+  padding:0 8% 80px 8%;
+}
+
+/* CARD */
+.new-card{
+  background:#fff;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  transition:0.4s ease;
+}
+
+.new-card:hover{
+  transform:translateY(-10px);
+}
+
+/* IMAGE */
+.new-card img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+  transition:0.4s;
+}
+
+.new-card:hover img{
+  transform:scale(1.05);
+}
+
+/* CONTENT */
+.card-body{
+  padding:20px;
+  text-align:center;
+}
+
+.card-body h3{
+  font-size:1.25rem;
+  margin-bottom:6px;
+}
+
+.card-body span{
+  color:var(--gray);
+  font-size:0.95rem;
+  display:block;
+  margin-bottom:8px;
+}
+
+.price{
+  font-size:1.2rem;
+  font-weight:600;
+  margin-bottom:15px;
+}
+
+/* BUTTON */
+.buy-btn{
+  display:inline-block;
+  padding:12px 32px;
+  border-radius:50px;
+  background:var(--black);
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.buy-btn:hover{
+  background:#333;
+}
+
+/* RESPONSIVE */
+@media(max-width:500px){
+  .page-header h2{
+    font-size:2.3rem;
+  }
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins", sans-serif;
+}
+
+
+/* FOOTER */
+.footer{
+  background:var(--white);
+  color:var(--black);
+  padding:60px 8%;
+  box-shadow:var(--shadow);
+}
+
+.footer-container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:30px;
+}
+
+/* FOOTER BOX */
+.footer-box{
+  flex:1 1 220px;
+}
+
+.footer-box h3{
+  font-size:1.5rem;
+  margin-bottom:20px;
+}
+
+.footer-box p{
+  color:var(--gray);
+  font-size:0.95rem;
+  line-height:1.6;
+}
+
+.footer-box a{
+  display:block;
+  color:var(--gray);
+  text-decoration:none;
+  margin-bottom:10px;
+  transition:0.3s;
+}
+
+.footer-box a:hover{
+  color:var(--accent);
+}
+
+.social-icons{
+  display:flex;
+  gap:15px;
+  margin-top:10px;
+}
+
+.social-icons a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  background: black;
+  color: white;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.social-icons a:hover{
+  background:#333;
+}
+
+/* NEWSLETTER */
+.newsletter-form{
+  display:flex;
+  margin-top:15px;
+}
+
+.newsletter-form input[type="email"]{
+  flex:1;
+  padding:10px 15px;
+  border-radius:50px 0 0 50px;
+  border:none;
+  outline:none;
+  font-size:1rem;
+}
+
+.newsletter-form button{
+  padding:10px 20px;
+  border:none;
+  border-radius:0 50px 50px 0;
+  background: black;
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.newsletter-form button:hover{
+  background:#333;
+}
+
+/* COPYRIGHT */
+.footer-bottom{
+  text-align:center;
+  margin-top:40px;
+  color:var(--gray);
+  font-size:0.9rem;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .footer-container{
+    flex-direction:column;
+    align-items:center;
+  }
+  .footer-box{
+    flex:1 1 100%;
+    text-align:center;
+  }
+  .newsletter-form{
+    flex-direction:column;
+  }
+  .newsletter-form input[type="email"]{
+    border-radius:50px;
+    margin-bottom:10px;
+  }
+  .newsletter-form button{
+    border-radius:50px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+<nav class="navbar">
+  <!-- Logo -->
+  <div class="logo">
+    <img src="logo.avif" alt="Gautam Footwear Logo">
+    <span>Gautam Footwear</span>
+  </div>
+
+  <!-- Menu -->
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="men.html">Men</a></li>
+    <li><a href="women.html">Women</a></li>
+    <li><a href="kids.html">Kids</a></li>
+    <li><a href="offer.html">Offers</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+
+  <!-- Hamburger -->
+  <div class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+<!-- NEW FOOTWEAR COLLECTION PAGE -->
+<section class="page-header">
+  <h2>New Footwear Collection 2026</h2>
+  <p>Check out the latest arrivals in footwear for men, women, and kids</p>
+</section>
+
+<section class="new-grid">
+
+  <!-- CARD 1 -->
+  <div class="new-card">
+    <img src="lea.avif" alt="New Shoe 1">
+    <div class="card-body">
+      <h3>Leather Sneakers</h3>
+      <span>Men's Casual</span>
+      <div class="price">₹2,099</div>
+      <a href="pay1.html" class="buy-btn">Buy Now</a>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="new-card">
+    <img src="run.webp" alt="New Shoe 2">
+    <div class="card-body">
+      <h3>Running Sneakers</h3>
+      <span>Sports & Fitness</span>
+      <div class="price">₹2,399</div>
+      <a href="pay3.html" class="buy-btn">Buy Now</a>
+    </div>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="new-card">
+    <img src="loa.webp" alt="New Shoe 3">
+    <div class="card-body">
+      <h3>Casual Loafers</h3>
+      <span>Everyday Wear</span>
+      <div class="price">₹1,799</div>
+      <a href="pay4.html" class="buy-btn">Buy Now</a>
+    </div>
+  </div>
+
+  <!-- CARD 4 -->
+  <div class="new-card">
+    <img src="heel.jpg" alt="New Shoe 4">
+    <div class="card-body">
+      <h3>Party Heels</h3>
+      <span>Women Stylish</span>
+      <div class="price">₹1,899</div>
+      <a href="pro1.html" class="buy-btn">Buy Now</a>
+    </div>
+  </div>
+
+  <!-- CARD 5 -->
+  <div class="new-card">
+    <img src="cart.webp" alt="New Shoe 5">
+    <div class="card-body">
+      <h3>Kids Sneakers</h3>
+      <span>Play & Comfort</span>
+      <div class="price">₹799</div>
+      <a href="card1.html" class="buy-btn">Buy Now</a>
+    </div>
+  </div>
+
+  <!-- CARD 6 -->
+  <div class="new-card">
+    <img src="office.webp" alt="New Shoe 6">
+    <div class="card-body">
+      <h3>Formal Shoes</h3>
+      <span>Men's Office</span>
+      <div class="price">₹1,899</div>
+      <a href="pay11.html" class="buy-btn">Buy Now</a>
+    </div>
+  </div>
+
+  <!-- CARD 7 -->
+  <div class="new-card">
+    <img src="flat.webp" alt="New Shoe 7">
+    <div class="card-body">
+      <h3>Casual Flats</h3>
+      <span>Women Everyday</span>
+      <div class="price">₹999</div>
+      <a href="pro2.html" class="buy-btn">Buy Now</a>
+    </div>
+  </div>
+
+  <!-- CARD 8 -->
+  <div class="new-card">
+    <img src="high2.jpg" alt="New Shoe 8">
+    <div class="card-body">
+      <h3>High Top Sneakers</h3>
+      <span>Men & Kids</span>
+      <div class="price">₹2,699</div>
+      <a href="new-product8.html" class="buy-btn">Buy Now</a>
+    </div>
+  </div>
+
+  <!-- CARD 9 -->
+  <div class="new-card">
+    <img src="loa3.avif" alt="New Shoe 9">
+    <div class="card-body">
+      <h3>Designer Loafers</h3>
+      <span>Men Casual</span>
+      <div class="price">₹2,199</div>
+      <a href="new-product9.html" class="buy-btn">Buy Now</a>
+    </div>
+  </div>
+
+  <!-- CARD 10 -->
+  <div class="new-card">
+    <img src="sand.jpg" alt="New Shoe 10">
+    <div class="card-body">
+      <h3>Comfort Sandals</h3>
+      <span>Women & Kids</span>
+      <div class="price">₹1,299</div>
+      <a href="pro3.html" class="buy-btn">Buy Now</a>
+    </div>
+  </div>
+
+  <!-- CARD 11 -->
+  <div class="new-card">
+    <img src="run3.webp" alt="New Shoe 11">
+    <div class="card-body">
+      <h3>Running Shoes</h3>
+      <span>Sports Men</span>
+      <div class="price">₹799</div>
+      <a href="card7.html" class="buy-btn">Buy Now</a>
+    </div>
+  </div>
+
+  <!-- CARD 12 -->
+  <div class="new-card">
+    <img src="boot.jpg" alt="New Shoe 12">
+    <div class="card-body">
+      <h3>Leather Boots</h3>
+      <span>Men Casual</span>
+      <div class="price">₹1,099</div>
+      <a href="card10.html" class="buy-btn">Buy Now</a>
+    </div>
+  </div>
+
+  <!-- CARD 13 -->
+  <div class="new-card">
+    <img src="slip3.webp" alt="New Shoe 13">
+    <div class="card-body">
+      <h3>Slip-on Flats</h3>
+      <span>Women Daily</span>
+      <div class="price">₹699</div>
+      <a href="card5.html" class="buy-btn">Buy Now</a>
+    </div>
+  </div>
+
+  <!-- CARD 14 -->
+  <div class="new-card">
+    <img src="party3.webp" alt="New Shoe 14">
+    <div class="card-body">
+      <h3>Kids Party Shoes</h3>
+      <span>Stylish & Fun</span>
+      <div class="price">₹899</div>
+      <a href="card6.html" class="buy-btn">Buy Now</a>
+    </div>
+  </div>
+
+  <!-- CARD 15 -->
+  <div class="new-card">
+    <img src="off.jpg" alt="New Shoe 15">
+    <div class="card-body">
+      <h3>Formal Oxfords</h3>
+      <span>Men Office</span>
+      <div class="price">₹2,399</div>
+      <a href="new-product15.html" class="buy-btn">Buy Now</a>
+    </div>
+  </div>
+
+  <!-- CARD 16 -->
+  <div class="new-card">
+    <img src="comfor.jpg" alt="New Shoe 16">
+    <div class="card-body">
+      <h3>Comfort Sneakers</h3>
+      <span>Men & Women</span>
+      <div class="price">₹1,699</div>
+      <a href="new-product16.html" class="buy-btn">Buy Now</a>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- FOOTER SECTION -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- ABOUT -->
+    <div class="footer-box">
+      <h3>Gautam Footwear</h3>
+      <p>Step into comfort and style. Explore our latest collection of men's, women's, and kids' footwear, designed to elevate your everyday look.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f">F</i></a>
+        <a href="#"><i class="fab fa-twitter">T</i></a>
+        <a href="#"><i class="fab fa-instagram">I</i></a>
+      </div>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="men.html">Men's Collection</a>
+      <a href="women.html">Women's Collection</a>
+      <a href="kids.html">Kids' Collection</a>
+      <a href="offer.html">Offers</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+
+    <!-- NEWSLETTER -->
+    <div class="footer-box">
+      <h3>Subscribe</h3>
+      <p>Get the latest updates, discounts, and offers directly in your inbox.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2025 Gautam Footwear. All Rights Reserved.
+  </div>
+</footer>
+<script>
+   const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+
+console.log("Gautam Footwear New Collection Page Loaded");
+
+console.log("Gautam Footwear Footer Loaded");
+
+// Optional: handle newsletter submission
+document.querySelector(".newsletter-form").addEventListener("submit", function(e){
+  e.preventDefault();
+  alert("Thank you for subscribing!");
+});
+</script>
+
+</body>
+</html>

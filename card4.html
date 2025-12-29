@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gautam Footwear | Lightweight Sneakers for Kids</title>
+
+<!-- Razorpay Checkout -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background:#ffffff;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.card{
+    max-width:900px;
+    width:100%;
+    background:#fff;
+    border-radius:18px;
+    box-shadow:0 20px 45px rgba(0,0,0,0.08);
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(320px,1fr));
+    overflow:hidden;
+}
+
+.image-section{
+    background:#f7f7f7;
+    padding:30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.image-section img{
+    width:100%;
+    max-width:420px;
+    border-radius:14px;
+    transition:0.4s;
+}
+
+.image-section img:hover{
+    transform:scale(1.05);
+}
+
+.details{
+    padding:40px;
+}
+
+.brand{
+    font-size:14px;
+    color:#888;
+    margin-bottom:6px;
+}
+
+.title{
+    font-size:28px;
+    font-weight:600;
+    color:#222;
+    margin-bottom:15px;
+}
+
+.price{
+    font-size:26px;
+    font-weight:700;
+    color:#000;
+    margin-bottom:20px;
+}
+
+.desc{
+    font-size:15px;
+    color:#555;
+    line-height:1.7;
+    margin-bottom:30px;
+}
+
+.buy-now{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    padding:15px;
+    border-radius:12px;
+    background:#000;
+    color:#fff;
+    font-size:18px;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.buy-now:hover{
+    background:#333;
+    transform:translateY(-2px);
+}
+
+.secure{
+    margin-top:18px;
+    font-size:13px;
+    color:#777;
+    text-align:center;
+}
+
+@media(max-width:600px){
+    .title{
+        font-size:22px;
+    }
+    .price{
+        font-size:22px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+    <!-- Product Image -->
+    <div class="image-section">
+        <img src="light.jpg" alt="Lightweight Sneakers for Kids">
+    </div>
+
+    <!-- Product Details -->
+    <div class="details">
+        <div class="brand">Gautam Footwear</div>
+        <div class="title">Lightweight Sneakers</div>
+        <div class="price">₹849</div>
+
+        <div class="desc">
+            Comfortable and lightweight sneakers for kids. Perfect for daily wear, sports, and school activities, 
+            providing flexibility and style for growing feet.
+        </div>
+
+        <!-- Buy Now as LINK -->
+        <a href="javascript:void(0)" class="buy-now" onclick="payNow()">
+            Buy Now
+        </a>
+
+        <div class="secure">
+            🔒 100% Secure Payments via Razorpay
+        </div>
+    </div>
+</div>
+
+<script>
+function payNow(){
+    var options = {
+        "key": "rzp_live_Rob3IGPCRkuPYJ",
+        "amount": 84900, // ₹1499 in paise
+        "currency": "INR",
+        "name": "Gautam Footwear",
+        "description": "Lightweight Sneakers for Kids",
+        "image": "https://images.unsplash.com/photo-1600180758940-3d8a1234f1b9",
+        "handler": function (response){
+            alert(
+                "Payment Successful!\n" +
+                "Payment ID: " + response.razorpay_payment_id
+            );
+        },
+        "theme": {
+            "color": "#000000"
+        }
+    };
+
+    var rzp = new Razorpay(options);
+    rzp.open();
+}
+</script>
+
+</body>
+</html>
